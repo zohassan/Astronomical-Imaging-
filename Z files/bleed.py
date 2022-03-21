@@ -29,13 +29,14 @@ ny = 4611
 
 bg = 3416 - 300
 bleed_circle = {
-    1 : [[1430,3202],196],
-    2 : [[906,2285],69],
-    3 : [[976,2774],61],
-    4 : [[2136,3756],50],
-    5 : [[2464,3414],31],
-    6 : [[2133,2308],30],
-    7 : [[2089,1425],27],}
+    1 : [[1430,3202],240],
+    2 : [[906,2285],80],
+    3 : [[976,2774],70],
+    4 : [[2136,3756],60],
+    5 : [[2464,3414],38],
+    6 : [[2133,2308],40],
+    7 : [[2089,1425],40],
+}
 
 bleed_ellipse = {
     1 : [[778,3317],[33,100]],
@@ -51,7 +52,7 @@ bleed_box = {
 
 vertical_column = [1380,1470]
 y_borders = [118,4517]
-x_borders = [100,2470]
+x_borders = [130,2440]
     
 
 X = np.log(image[3050:3350,1230:1680])
@@ -131,8 +132,8 @@ for j in range (0,ny):
             mask[j][i] = 0
  
 
-np.savetxt('base_masked_bleeding.csv',mask,delimiter=",")
-#%%
+np.savetxt('base_masked_bleeding.cvs',mask,delimiter=",")
+#%% THIS IS ALL PLOTTING 
 
 """
 This cell plots a colormap of all the pixel values before and after the manual
@@ -151,9 +152,9 @@ plt.subplot(1,2,1)
 plt.imshow(np.log(image),cmap='inferno',vmin=low,vmax=high)
 plt.subplot(1,2,2)
 plt.imshow(np.log(copy),cmap="inferno",vmin=low,vmax=high)
+plt.show()
 
-
-#%%
+#%% THIS IS ALL PLOTTING 
 
 # Z = np.log(copy[3050:3350,1230:1680])  
 
